@@ -1,0 +1,55 @@
+<resources>
+    <string name="app_name">The Lost Play House</string>
+    <string name="bienvenido">Bienvenido!</string>
+    <string name="categorias">Categorias</string>
+    <string name="punteria">Punteria</string>
+    <string name="destreza">Destreza</string>
+    <string name="deporte">Deporte</string>
+    <string name="fuerza">Fuerza</string>
+    <string name="volver">Volver</string>
+    <string name="jugar">Jugar</string>
+    <string name="estadisticas">Estadisticas</string>
+    <string name="simulando">Simulando</string>
+    <string name="finish">Finalizar Partida</string>
+    <string name="info">Información</string>
+    <string name="menuPrincipal">Menu Principal</string>
+
+
+    <!-- JUEGOS -->
+
+    <string name="topo">Topo</string>
+    <string name="pinball">Pinball</string>
+    <string name="pato">Pescar patos</string>
+    <string name="skeeball">Skeeball</string>
+    <string name="martillo">Martillo</string>
+    <string name="punchingBag">Punching Bag</string>
+    <string name="soccer">Patear</string>
+    <string name="vencidas">Vencidas</string>
+    <string name="bowling">Bowling</string>
+    <string name="disquito">Disquito Flotador</string>
+    <string name="basquet">Basquet</string>
+    <string name="minigolf">Minigolf</string>
+    <string name="dardo">Dardo</string>
+    <string name="aros">Aros</string>
+    <string name="sapito">Sapito</string>
+    <string name="pistolaDeAgua">Pistola de Agua</string>
+
+    <string-array name="niveles">
+        <item>Nivel 1</item>
+        <item>Nivel 2</item>
+        <item>Nivel 3</item>
+        <item>Nivel 4</item>
+        <item>Nivel 5</item>
+        <item>Nivel 6</item>
+        <item>Nivel 7</item>
+        <item>Nivel 8</item>
+        <item>Nivel 9</item>
+        <item>Nivel 10</item>
+    </string-array>
+
+    <string-array name="dificultad">
+        <item>Novato</item>
+        <item>Amateur</item>
+        <item>Profesional</item>
+    </string-array>
+</resources>
