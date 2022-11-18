@@ -1,4 +1,3 @@
-
 package com.example.ejercicio4.db;
 
 import android.content.ContentValues;
@@ -7,16 +6,16 @@ import android.database.sqlite.SQLiteDatabase;
 
 import androidx.annotation.Nullable;
 
-public class dbJuegos extends DBHelper{
+public class DBJuegos extends DBHelper{
 
     Context context;
 
-    public dbJuegos(@Nullable Context context) {
+    public DBJuegos(@Nullable Context context) {
         super(context);
         this.context = context;
     }
 
-    public long insertarJogo (String nombreJuego, String nombreJugador, int complejidad, int nivel, int puntaje) { //existe alguna forma de mejorar el pasaje de tantos parametros? buscar
+    public long insertarJogo (String nombreJuego, String nombreJugador, String complejidad, String nivel, int puntaje) { //existe alguna forma de mejorar el pasaje de tantos parametros? buscar
         long id = 0;
         try {
             DBHelper dbHelper = new DBHelper(context);
@@ -35,5 +34,13 @@ public class dbJuegos extends DBHelper{
         }
 
         return id;
+    }
+
+
+
+    //ver despues
+    public boolean ifExists (String SQLSentence){
+        boolean ret = Boolean.parseBoolean("");
+        return ret;
     }
 }

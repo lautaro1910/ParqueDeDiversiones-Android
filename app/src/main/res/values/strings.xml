@@ -52,4 +52,8 @@
         <item>Amateur</item>
         <item>Profesional</item>
     </string-array>
+
+    <!-- HINTs -->
+    <string name="nombreJugador">Nombre:</string>
+    <string name="puntaje">Puntaje obtenido:</string>
 </resources>

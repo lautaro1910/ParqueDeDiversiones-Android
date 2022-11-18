@@ -24,15 +24,15 @@ public class DBHelper extends SQLiteOpenHelper {
                 "nombreJuego TEXT NOT NULL," +
                 //"categoriaJuego TEXT NOT NULL," + //agregarla o no agregarla? es la cuestion
                 "nombreJugador TEXT NOT NULL," +
-                "complejidad INTEGER NOT NULL," +  // codificado -> 1 = novato, 2 = amaterur, 3 = profesional
-                "nivel INTEGER NOT NULL," +
-                "puntaje INTEGER NOT NULL)");
+                "complejidad TEXT NOT NULL," +
+                "nivel TEXT NOT NULL," +
+                "puntaje INTEGER NOT NULL) ;");
     }
 
     // este metodo se ejecuta cuando cambia la version de la base de datos
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
-        sqLiteDatabase.execSQL("DROP TABLE " + TABLE_JUEGOS);
+        sqLiteDatabase.execSQL("DROP TABLE " + TABLE_JUEGOS + ";");
         onCreate(sqLiteDatabase);
     }
 }

@@ -1,14 +1,21 @@
 package com.example.ejercicio4;
 
 import android.content.Intent;
+import android.database.SQLException;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.ejercicio4.db.DBHelper;
+import com.example.ejercicio4.db.DBJuegos;
 
 public class JugarActivity extends AppCompatActivity {
 
@@ -17,18 +24,31 @@ public class JugarActivity extends AppCompatActivity {
     Spinner spinnerNiveles;
     Spinner spinnerDificultad;
     ImageView imagenPrincipal;
+
+    //textEdit
+    EditText nombreJugador, puntaje;
+
     static Integer[] images = {R.drawable.topo,R.drawable.pinball,R.drawable.pato,R.drawable.skeeball,
             R.drawable.martillo,R.drawable.punching_bag,R.drawable.soccer,R.drawable.vencidas,
             R.drawable.bowling,R.drawable.disquito_flotador,R.drawable.basquet,R.drawable.minigolf,
             R.drawable.dardo,R.drawable.aros,R.drawable.sapito,R.drawable.pistola_de_agua};
+    static Integer[] namesImages = {R.string.topo,R.string.pinball,R.string.pato,R.string.skeeball,
+            R.string.martillo,R.string.punchingBag,R.string.soccer,R.string.vencidas,
+            R.string.bowling,R.string.disquito,R.string.basquet,R.string.minigolf,
+            R.string.dardo,R.string.aros,R.string.sapito,R.string.pistolaDeAgua};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.jugar);
         Bundle bundle = this.getIntent().getExtras();
+
+        //images
         imagenPrincipal = (ImageView) findViewById(R.id.imagePrin);
         imagenPrincipal.setImageResource(images[bundle.getInt("Juego")]);
+
+        //spinners
         spinnerNiveles = findViewById(R.id.spinnerNiveles);
         spinnerDificultad = findViewById(R.id.spinnerDificultad);
         ArrayAdapter<CharSequence> adapterNiveles=ArrayAdapter.createFromResource(this, R.array.niveles, android.R.layout.simple_spinner_item);
@@ -37,7 +57,16 @@ public class JugarActivity extends AppCompatActivity {
         adapterDificultad.setDropDownViewResource(android.R.layout.simple_spinner_item);
         spinnerNiveles.setAdapter(adapterNiveles);
         spinnerDificultad.setAdapter(adapterDificultad);
+
+        //editText
+        nombreJugador = findViewById(R.id.nombre);
+        puntaje = findViewById(R.id.puntaje);
+
+        //buttons
         btnVolver = (Button) findViewById(R.id.volverA);
+        btnFinalizar = (Button) findViewById(R.id.buttonFinalizar);
+
+        //functions
         btnVolver.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -45,7 +74,6 @@ public class JugarActivity extends AppCompatActivity {
                 Intent intent =
                         new Intent(JugarActivity.this, MenuJuegosActivity.class);
                 Bundle b = new Bundle();
-                //DEPORTE == 3
                 b.putInt("Imagen",bundle.getInt("Juego"));
                 //Añadimos la información al intent
                 intent.putExtras(b);
@@ -54,5 +82,39 @@ public class JugarActivity extends AppCompatActivity {
             }
         });
 
+        btnFinalizar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //Creamos el Intent
+                Intent intent =
+                        new Intent(JugarActivity.this, MenuJuegosActivity.class);
+                Bundle b = new Bundle();
+                b.putInt("Imagen", bundle.getInt("Juego"));
+                //Añadimos la información al intent
+                intent.putExtras(b);
+                //Iniciamos la nueva actividad
+                startActivity(intent);
+
+                DBJuegos dbJuegos = new DBJuegos(JugarActivity.this);
+
+                String dificultad = spinnerDificultad.getSelectedItem().toString();
+                String nivel = spinnerNiveles.getSelectedItem().toString();
+                String nombreJogo = namesImages[bundle.getInt("Juego")].toString();
+
+                long id = dbJuegos.insertarJogo( nombreJogo, nombreJugador.getText().toString(), dificultad, nivel, Integer.parseInt(puntaje.getText().toString()));
+                if (id > 0){
+                    Toast.makeText(JugarActivity.this, "Se registro correctamente!", Toast.LENGTH_LONG).show();
+                    cleanFields();
+                } else {
+                    Toast.makeText(JugarActivity.this, "ERROR. Fallo al registrar informacion", Toast.LENGTH_LONG).show();
+                }
+
+            }
+        });
+    }
+
+    private void cleanFields () {
+        nombreJugador.setText("");
+        puntaje.setText("");
     }
 }
