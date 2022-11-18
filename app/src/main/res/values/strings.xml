@@ -1,22 +1,35 @@
 <resources>
-    <string name="app_name">The Lost Play House</string>
-    <string name="bienvenido">Bienvenido!</string>
+    <string name="app_name">Mi Parque de Diversiones</string>
+
+    <!-- GENERAL RESOURCES-->
     <string name="categorias">Categorias</string>
+    <string name="volver">Volver</string>
+    <string name="simulando">Simulando</string>
+    <string name="menuPrincipal">Menu Principal</string>
+
+
+    <!-- MAIN ACTIVITY -->
+    <string name="bienvenido">Bienvenido!</string>
+
+    <!-- INFORMACION -->
+    <string name="autores">Autores:</string>
+    <string name="descripcion">Aplicación para guardar las partidas jugadas en un parque de diversión. Proyecto de creación de una aplicación móvil en android studio para TATW.</string>
+    <string name="info">Información</string>
+    <string name="mathi">Schuvab Mathias</string>
+    <string name="lauty">Soria Lautaro</string>
+
+    <!-- CATEGORIAS -->
     <string name="punteria">Punteria</string>
     <string name="destreza">Destreza</string>
     <string name="deporte">Deporte</string>
     <string name="fuerza">Fuerza</string>
-    <string name="volver">Volver</string>
+
+    <!-- MENU JUEGO -->
     <string name="jugar">Jugar</string>
     <string name="estadisticas">Estadisticas</string>
-    <string name="simulando">Simulando</string>
     <string name="finish">Finalizar Partida</string>
-    <string name="info">Información</string>
-    <string name="menuPrincipal">Menu Principal</string>
-
 
     <!-- JUEGOS -->
-
     <string name="topo">Topo</string>
     <string name="pinball">Pinball</string>
     <string name="pato">Pescar patos</string>
@@ -34,6 +47,8 @@
     <string name="sapito">Sapito</string>
     <string name="pistolaDeAgua">Pistola de Agua</string>
 
+
+    <!-- NIVELES -->
     <string-array name="niveles">
         <item>Nivel 1</item>
         <item>Nivel 2</item>
@@ -47,13 +62,14 @@
         <item>Nivel 10</item>
     </string-array>
 
+    <!-- DIFICULTAD -->
     <string-array name="dificultad">
         <item>Novato</item>
         <item>Amateur</item>
         <item>Profesional</item>
     </string-array>
 
-    <!-- HINTs -->
+    <!-- HINTS -->
     <string name="nombreJugador">Nombre:</string>
     <string name="puntaje">Puntaje obtenido:</string>
 </resources>

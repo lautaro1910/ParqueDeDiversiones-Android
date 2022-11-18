@@ -16,6 +16,7 @@ public class CategoriaActivity extends AppCompatActivity {
 
     private Button btnVolver;
     private Button btnMenu;
+    private TextView textoCategoria;
     private TextView textoUno;
     private TextView textoDos;
     private TextView textoTres;
@@ -29,6 +30,8 @@ public class CategoriaActivity extends AppCompatActivity {
             R.drawable.martillo,R.drawable.punching_bag,R.drawable.soccer,R.drawable.vencidas,
             R.drawable.bowling,R.drawable.disquito_flotador,R.drawable.basquet,R.drawable.minigolf,
             R.drawable.dardo,R.drawable.aros,R.drawable.sapito,R.drawable.pistola_de_agua};
+
+    static Integer[] categorias = {R.string.destreza, R.string.fuerza, R.string.deporte, R.string.punteria};
 
     static Integer[] namesImages = {R.string.topo,R.string.pinball,R.string.pato,R.string.skeeball,
             R.string.martillo,R.string.punchingBag,R.string.soccer,R.string.vencidas,
@@ -48,6 +51,7 @@ public class CategoriaActivity extends AppCompatActivity {
         textoDos = (TextView) findViewById(R.id.textoJuego2);
         textoTres = (TextView) findViewById(R.id.textoJuego3);
         textoCuatro = (TextView) findViewById(R.id.textoJuego4);
+        textoCategoria = (TextView) findViewById(R.id.categoria);
         Bundle bundle = this.getIntent().getExtras();
         imagenUno.setImageResource(images[4 * bundle.getInt("Opcion")-4]);
         imagenDos.setImageResource(images[4 * bundle.getInt("Opcion")-3]);
@@ -57,6 +61,7 @@ public class CategoriaActivity extends AppCompatActivity {
         textoDos.setText(namesImages[4 * bundle.getInt("Opcion")-3]);
         textoTres.setText(namesImages[4 * bundle.getInt("Opcion")-2]);
         textoCuatro.setText(namesImages[4 * bundle.getInt("Opcion")-1]);
+        textoCategoria.setText(categorias[bundle.getInt("Opcion")-1]);
         btnMenu = (Button) findViewById(R.id.menuPrincipal);
         btnVolver = (Button) findViewById(R.id.volver);
         btnVolver.setOnClickListener(new View.OnClickListener() {

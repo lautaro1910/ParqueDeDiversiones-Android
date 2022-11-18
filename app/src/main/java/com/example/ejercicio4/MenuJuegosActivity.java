@@ -53,7 +53,6 @@ public class MenuJuegosActivity extends AppCompatActivity {
                 Intent intent =
                         new Intent(MenuJuegosActivity.this, CategoriaActivity.class);
                 Bundle b = new Bundle();
-                //DEPORTE == 3
                 b.putInt("Opcion", (int) Math.ceil((bundle.getInt("Imagen")/4)+1));
                 //Añadimos la información al intent
                 intent.putExtras(b);
@@ -69,7 +68,6 @@ public class MenuJuegosActivity extends AppCompatActivity {
                 Intent intent =
                         new Intent(MenuJuegosActivity.this, JugarActivity.class);
                 Bundle b = new Bundle();
-                //DEPORTE == 3
                 b.putInt("Juego", bundle.getInt("Imagen"));
                 //Añadimos la información al intent
                 intent.putExtras(b);
@@ -85,7 +83,6 @@ public class MenuJuegosActivity extends AppCompatActivity {
                 Intent intent =
                         new Intent(MenuJuegosActivity.this, EstadisticasActivity.class);
                 Bundle b = new Bundle();
-                //DEPORTE == 3
                 b.putInt("Estadistica", bundle.getInt("Imagen"));
                 //Añadimos la información al intent
                 intent.putExtras(b);
