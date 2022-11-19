@@ -13,12 +13,11 @@
         android:layout_height="130dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.850"
+        app:layout_constraintHorizontal_bias="0.85"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.550"
-        app:srcCompat="@drawable/deportes"
-        />
+        app:layout_constraintVertical_bias="0.605"
+        app:srcCompat="@drawable/deportes" />
 
     <ImageView
         android:id="@+id/imagePunteria"
@@ -26,10 +25,10 @@
         android:layout_height="130dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.150"
+        app:layout_constraintHorizontal_bias="0.149"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.200"
+        app:layout_constraintVertical_bias="0.239"
         app:srcCompat="@drawable/punteria" />
 
     <TextView
@@ -43,7 +42,7 @@
         app:layout_constraintHorizontal_bias="0.781"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageOneVSOne"
-        app:layout_constraintVertical_bias="0.148" />
+        app:layout_constraintVertical_bias="0.09" />
 
     <TextView
         android:id="@+id/textView9"
@@ -56,7 +55,7 @@
         app:layout_constraintHorizontal_bias="0.248"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageFuerza"
-        app:layout_constraintVertical_bias="0.148" />
+        app:layout_constraintVertical_bias="0.09" />
 
     <ImageView
         android:id="@+id/imageDestreza"
@@ -64,12 +63,11 @@
         android:layout_height="130dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.850"
+        app:layout_constraintHorizontal_bias="0.85"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.200"
-        app:srcCompat="@drawable/destreza"
-       />
+        app:layout_constraintVertical_bias="0.239"
+        app:srcCompat="@drawable/destreza" />
 
     <TextView
         android:id="@+id/textView7"
@@ -90,12 +88,11 @@
         android:layout_height="130dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.150"
+        app:layout_constraintHorizontal_bias="0.149"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.550"
-        app:srcCompat="@drawable/fuerza"
-        />
+        app:layout_constraintVertical_bias="0.605"
+        app:srcCompat="@drawable/fuerza" />
 
     <TextView
         android:id="@+id/textView6"

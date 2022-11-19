@@ -102,18 +102,23 @@ public class JugarActivity extends AppCompatActivity {
                 //Iniciamos la nueva actividad
                 startActivity(intent);
 
-                DBJuegos dbJuegos = new DBJuegos(JugarActivity.this);
+                long id = 0;
 
-                String dificultad = spinnerDificultad.getSelectedItem().toString();
-                String nivel = spinnerNiveles.getSelectedItem().toString();
-                String nombreJogo = namesImages[bundle.getInt("Juego")].toString();
+                if(!(puntaje.getText().toString() != null && nombreJugador.getText().toString() != null)){
+                    Toast.makeText(JugarActivity.this, "Es necesario llenar todos los campos!", Toast.LENGTH_LONG).show();
+                }else{
+                    DBJuegos dbJuegos = new DBJuegos(JugarActivity.this);
+                    String dificultad = spinnerDificultad.getSelectedItem().toString();
+                    String nivel = spinnerNiveles.getSelectedItem().toString();
+                    String nombreJogo = namesImages[bundle.getInt("Juego")].toString();
+                    id = dbJuegos.insertarJogo( nombreJogo, nombreJugador.getText().toString(), dificultad, nivel, Integer.parseInt(puntaje.getText().toString()));
 
-                long id = dbJuegos.insertarJogo( nombreJogo, nombreJugador.getText().toString(), dificultad, nivel, Integer.parseInt(puntaje.getText().toString()));
-                if (id > 0){
-                    Toast.makeText(JugarActivity.this, "Se registro correctamente!", Toast.LENGTH_LONG).show();
-                    cleanFields();
-                } else {
-                    Toast.makeText(JugarActivity.this, "ERROR. Fallo al registrar informacion", Toast.LENGTH_LONG).show();
+                    if (id > 0){
+                        Toast.makeText(JugarActivity.this, "Se registro correctamente!", Toast.LENGTH_LONG).show();
+                        cleanFields();
+                    } else {
+                        Toast.makeText(JugarActivity.this, "ERROR. Fallo al registrar informacion", Toast.LENGTH_LONG).show();
+                    }
                 }
 
             }

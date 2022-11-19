@@ -40,7 +40,6 @@ public class MainActivity extends AppCompatActivity {
                 }
                 */
                 // aca termina la parte de DB
-                // falta probar
                 // ------------------------------
 
 

@@ -2,9 +2,14 @@ package com.example.ejercicio4.db;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
 import androidx.annotation.Nullable;
+
+import com.example.ejercicio4.entidades.Jogos;
+
+import java.util.ArrayList;
 
 public class DBJuegos extends DBHelper{
 
@@ -29,11 +34,40 @@ public class DBJuegos extends DBHelper{
             valores.put("puntaje", puntaje);
 
             id = db.insert( TABLE_JUEGOS, null, valores);
+            db.close();
         } catch (Exception ex) {
             ex.toString();
         }
-
         return id;
+    }
+
+    //metodo q guarda en un arraylist los jugadores con la info
+    public ArrayList<Jogos> mostrarJugadores (){
+        DBHelper dbHelper = new DBHelper(context);
+        SQLiteDatabase db = dbHelper.getWritableDatabase();
+
+        ArrayList<Jogos> listaJugadores = new ArrayList<>();
+
+        Jogos juego = null;
+        Cursor cursorJuegos = null;
+
+        //consulta sql
+        cursorJuegos = db.rawQuery("SELECT nombreJuego, nombreJugador, complejidad, puntaje FROM " + TABLE_JUEGOS + " ORDER BY puntaje", null);
+
+        if(cursorJuegos.moveToFirst()){
+            do {
+                juego = new Jogos();
+                juego.setNombreJugador(cursorJuegos.getString(1));
+                juego.setNombreJuego(cursorJuegos.getString(0));
+                juego.setComplejidad(cursorJuegos.getString(2));
+                juego.setPuntaje(cursorJuegos.getInt(3));
+
+                listaJugadores.add(juego);
+            } while(cursorJuegos.moveToNext());
+        }
+        cursorJuegos.close();
+
+        return listaJugadores;
     }
 
 
