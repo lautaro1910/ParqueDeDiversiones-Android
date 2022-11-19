@@ -23,7 +23,6 @@ public class EstadisticasActivity extends AppCompatActivity {
                 Intent intent =
                         new Intent(EstadisticasActivity.this, MenuJuegosActivity.class);
                 Bundle b = new Bundle();
-                //DEPORTE == 3
                 b.putInt("Imagen",bundle.getInt("Estadistica"));
                 //Añadimos la información al intent
                 intent.putExtras(b);

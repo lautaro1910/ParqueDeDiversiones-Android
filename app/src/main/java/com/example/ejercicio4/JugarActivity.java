@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -24,6 +25,7 @@ public class JugarActivity extends AppCompatActivity {
     Spinner spinnerNiveles;
     Spinner spinnerDificultad;
     ImageView imagenPrincipal;
+    TextView textJuego;
 
     //textEdit
     EditText nombreJugador, puntaje;
@@ -32,6 +34,7 @@ public class JugarActivity extends AppCompatActivity {
             R.drawable.martillo,R.drawable.punching_bag,R.drawable.soccer,R.drawable.vencidas,
             R.drawable.bowling,R.drawable.disquito_flotador,R.drawable.basquet,R.drawable.minigolf,
             R.drawable.dardo,R.drawable.aros,R.drawable.sapito,R.drawable.pistola_de_agua};
+
     static Integer[] namesImages = {R.string.topo,R.string.pinball,R.string.pato,R.string.skeeball,
             R.string.martillo,R.string.punchingBag,R.string.soccer,R.string.vencidas,
             R.string.bowling,R.string.disquito,R.string.basquet,R.string.minigolf,
@@ -43,6 +46,10 @@ public class JugarActivity extends AppCompatActivity {
 
         setContentView(R.layout.jugar);
         Bundle bundle = this.getIntent().getExtras();
+
+        //TextView
+        textJuego = (TextView) findViewById(R.id.juego);
+        textJuego.setText(namesImages[bundle.getInt("Juego")]);
 
         //images
         imagenPrincipal = (ImageView) findViewById(R.id.imagePrin);

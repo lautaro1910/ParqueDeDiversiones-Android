@@ -2,65 +2,58 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layoutJuegos"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/layoutJuegos">
+    android:background="#ECECEC">
 
     <ImageView
         android:id="@+id/imageJuego1"
-        android:layout_width="107dp"
-        android:layout_height="100dp"
-        android:layout_marginStart="48dp"
+        android:layout_width="137dp"
+        android:layout_height="130dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/imageJuego2"
-        app:layout_constraintHorizontal_bias="0.04"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.150"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.137"
-        app:srcCompat="@android:drawable/ic_menu_gallery"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintVertical_bias="0.200"
+        app:srcCompat="@android:drawable/ic_menu_gallery" />
 
     <ImageView
         android:id="@+id/imageJuego2"
-        android:layout_width="107dp"
-        android:layout_height="100dp"
-        android:layout_marginBottom="56dp"
-        app:layout_constraintBottom_toTopOf="@+id/imageJuego4"
+        android:layout_width="137dp"
+        android:layout_height="130dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.756"
+        app:layout_constraintHorizontal_bias="0.850"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.679"
-        app:srcCompat="@android:drawable/ic_menu_gallery"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintVertical_bias="0.200"
+        app:srcCompat="@android:drawable/ic_menu_gallery" />
 
     <ImageView
         android:id="@+id/imageJuego3"
-        android:layout_width="107dp"
-        android:layout_height="100dp"
-        android:layout_marginTop="56dp"
+        android:layout_width="137dp"
+        android:layout_height="130dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.167"
+        app:layout_constraintHorizontal_bias="0.150"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageJuego1"
-        app:layout_constraintVertical_bias="0.107"
-        app:srcCompat="@android:drawable/ic_menu_gallery"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.550"
+        app:srcCompat="@android:drawable/ic_menu_gallery" />
 
     <ImageView
         android:id="@+id/imageJuego4"
-        android:layout_width="107dp"
-        android:layout_height="100dp"
-        android:layout_marginStart="4dp"
+        android:layout_width="137dp"
+        android:layout_height="130dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.489"
-        app:layout_constraintStart_toEndOf="@+id/imageJuego3"
+        app:layout_constraintHorizontal_bias="0.850"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.45"
-        app:srcCompat="@android:drawable/ic_menu_gallery"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintVertical_bias="0.550"
+        app:srcCompat="@android:drawable/ic_menu_gallery" />
 
     <Button
         android:id="@+id/volver"
@@ -79,6 +72,7 @@
         android:id="@+id/menuPrincipal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:backgroundTint="#DA0000"
         android:text="@string/menuPrincipal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -92,48 +86,67 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="TextView"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.206"
+        app:layout_constraintHorizontal_bias="0.217"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageJuego1"
-        app:layout_constraintVertical_bias="0.06" />
+        app:layout_constraintVertical_bias="0.052" />
 
     <TextView
         android:id="@+id/textoJuego3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="TextView"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.206"
+        app:layout_constraintHorizontal_bias="0.215"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageJuego3"
-        app:layout_constraintVertical_bias="0.094" />
+        app:layout_constraintVertical_bias="0.102" />
 
     <TextView
         android:id="@+id/textoJuego4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="TextView"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.716"
+        app:layout_constraintHorizontal_bias="0.796"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageJuego4"
-        app:layout_constraintVertical_bias="0.094" />
+        app:layout_constraintVertical_bias="0.098" />
 
     <TextView
         android:id="@+id/textoJuego2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="TextView"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.716"
+        app:layout_constraintHorizontal_bias="0.796"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageJuego2"
-        app:layout_constraintVertical_bias="0.059" />
+        app:layout_constraintVertical_bias="0.052" />
+
+    <TextView
+        android:id="@+id/categoria"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="serif-monospace"
+        android:text="TextView"
+        android:textAlignment="center"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.037" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

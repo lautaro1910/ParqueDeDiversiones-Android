@@ -21,20 +21,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
-        // ------------------------------
-        // aca esta la parte de la DB
-        DBHelper dbHelper = new DBHelper(MainActivity.this);
-        SQLiteDatabase db = dbHelper.getWritableDatabase(); //indicamos que vamos a escribir en nuestra db
-        if(db != null){
-            Toast.makeText(MainActivity.this, "Base de Datos creada!", Toast.LENGTH_LONG).show();
-        }else{
-            Toast.makeText( MainActivity.this, "ERROR. Base de Datos no creada!", Toast.LENGTH_LONG).show();
-        }
-        // aca termina la parte de DB
-        // falta probar
-        // ------------------------------
-
-
         btnCategories = (Button) findViewById(R.id.buttonCategories);
         btnInformacion = (Button) findViewById(R.id.btnInfo);
 
@@ -42,7 +28,20 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-
+                // ------------------------------
+                // aca esta la parte de la DB
+                DBHelper dbHelper = new DBHelper(MainActivity.this);
+                SQLiteDatabase db = dbHelper.getWritableDatabase(); //indicamos que vamos a escribir en nuestra db
+                /*
+                if(db != null){
+                    Toast.makeText(MainActivity.this, "Base de Datos creada!", Toast.LENGTH_LONG).show();
+                }else{
+                    Toast.makeText( MainActivity.this, "ERROR. Base de Datos no creada!", Toast.LENGTH_LONG).show();
+                }
+                */
+                // aca termina la parte de DB
+                // falta probar
+                // ------------------------------
 
 
 
