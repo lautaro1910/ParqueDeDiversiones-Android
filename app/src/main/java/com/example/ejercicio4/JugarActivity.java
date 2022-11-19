@@ -92,35 +92,32 @@ public class JugarActivity extends AppCompatActivity {
         btnFinalizar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //Creamos el Intent
-                Intent intent =
-                        new Intent(JugarActivity.this, MenuJuegosActivity.class);
-                Bundle b = new Bundle();
-                b.putInt("Imagen", bundle.getInt("Juego"));
-                //Añadimos la información al intent
-                intent.putExtras(b);
-                //Iniciamos la nueva actividad
-                startActivity(intent);
-
                 long id = 0;
-
-                if(!(puntaje.getText().toString() != null && nombreJugador.getText().toString() != null)){
-                    Toast.makeText(JugarActivity.this, "Es necesario llenar todos los campos!", Toast.LENGTH_LONG).show();
+                DBJuegos dbJuegos = new DBJuegos(JugarActivity.this);
+                String dificultad = spinnerDificultad.getSelectedItem().toString();
+                String nivel = spinnerNiveles.getSelectedItem().toString();
+                String nombreJogo = namesImages[bundle.getInt("Juego")].toString();
+                if((nombreJugador.getText().toString().equals("")) || (puntaje.getText().toString().equals(""))){
+                    Toast.makeText(JugarActivity.this, "Llene los campos antes de continuar", Toast.LENGTH_LONG).show();
                 }else{
-                    DBJuegos dbJuegos = new DBJuegos(JugarActivity.this);
-                    String dificultad = spinnerDificultad.getSelectedItem().toString();
-                    String nivel = spinnerNiveles.getSelectedItem().toString();
-                    String nombreJogo = namesImages[bundle.getInt("Juego")].toString();
-                    id = dbJuegos.insertarJogo( nombreJogo, nombreJugador.getText().toString(), dificultad, nivel, Integer.parseInt(puntaje.getText().toString()));
-
+                    id = dbJuegos.insertarJogo( nombreJogo, nombreJugador.getText().toString(), dificultad, nivel, Integer.parseInt(puntaje.getText().toString()), JugarActivity.this);
                     if (id > 0){
                         Toast.makeText(JugarActivity.this, "Se registro correctamente!", Toast.LENGTH_LONG).show();
+                        //Creamos el Intent
+                        Intent intent =
+                                new Intent(JugarActivity.this, MenuJuegosActivity.class);
+                        Bundle b = new Bundle();
+                        b.putInt("Imagen", bundle.getInt("Juego"));
+                        //Añadimos la información al intent
+                        intent.putExtras(b);
+                        //Iniciamos la nueva actividad
+                        startActivity(intent);
                         cleanFields();
                     } else {
                         Toast.makeText(JugarActivity.this, "ERROR. Fallo al registrar informacion", Toast.LENGTH_LONG).show();
                     }
-                }
 
+                }
             }
         });
     }

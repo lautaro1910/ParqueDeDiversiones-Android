@@ -4,34 +4,92 @@
     android:layout_height="match_parent">
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/viewNombreJugador"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text=""
-            android:textColor="#000000"
-            android:textSize="24sp" />
+            android:orientation="horizontal">
 
-        <TextView
-            android:id="@+id/viewNombreJuego"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="" />
+            <TextView
+                android:id="@+id/jugador"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Jugador:"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="24sp" />
 
-        <TextView
-            android:id="@+id/viewComplejidad"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="" />
+            <TextView
+                android:id="@+id/viewNombreJugador"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="24sp" />
 
-        <TextView
-            android:id="@+id/viewPuntaje"
+        </LinearLayout>
+        <View
+            android:id="@+id/divider5"
             android:layout_width="match_parent"
+            android:layout_height="4dp"
+            android:layout_weight="1"
+            android:background="?android:attr/listDivider" />
+        <LinearLayout
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="" />
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+
+                <TextView
+                    android:id="@+id/viewNivel"
+                    android:layout_width="120dp"
+                    android:layout_height="35dp"
+                    android:text=""
+                    android:textAlignment="center"
+                    android:textColor="#000000"
+                    android:textSize="20sp"/>
+
+                <View
+                    android:id="@+id/divider3"
+                    android:layout_width="4dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?android:attr/listDivider" />
+                <TextView
+                    android:id="@+id/viewComplejidad"
+                    android:layout_width="140dp"
+                    android:layout_height="34dp"
+                    android:text=""
+                    android:textAlignment="center"
+                    android:textColor="#000000"
+                    android:textSize="20sp"/>
+
+                <View
+                    android:id="@+id/divider4"
+                    android:layout_width="4dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?android:attr/listDivider" />
+                <TextView
+                    android:id="@+id/viewPuntaje"
+                    android:layout_width="142dp"
+                    android:layout_height="34dp"
+                    android:text=""
+                    android:textAlignment="center"
+                    android:textColor="#000000"
+                    android:textSize="20sp"/>
+            </LinearLayout>
+        </LinearLayout>
+
+
     </LinearLayout>
+
 </LinearLayout>
