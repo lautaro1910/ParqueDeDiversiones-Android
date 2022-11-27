@@ -62,7 +62,7 @@ public class ListaJugadoresAdapter extends BaseAdapter {
 
         viewNombreJugador.setText(nombreJugador);
         viewComplejidad.setText(complejidad);
-        viewPuntaje.setText(Integer.toString(puntaje));
+        viewPuntaje.setText(Integer.toString(puntaje)+" pts");
         viewNivel.setText(nivel);
         //Devolvemos la vista inflada
         return v;
