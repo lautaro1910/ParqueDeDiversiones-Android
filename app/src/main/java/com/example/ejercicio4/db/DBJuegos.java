@@ -37,6 +37,7 @@ public class DBJuegos extends DBHelper{
 
             id = db.insert( TABLE_JUEGOS, null, valores);
             db.close();
+            dbHelper.close();
         } catch (Exception ex) {
             Toast.makeText(context,"Existio un problema al ingresar los datos, por favor compruebe los campos y vuelva a intentar", Toast.LENGTH_LONG).show();
         }
@@ -55,21 +56,22 @@ public class DBJuegos extends DBHelper{
 
         //consulta sql
         cursorJuegos = db.rawQuery("SELECT * FROM " + TABLE_JUEGOS + " WHERE nombreJuego = " + nombreJuego, null);
-
-        if(cursorJuegos.moveToFirst()){
-            do {
-                juego = new Jogos();
-                juego.setNombreJugador(cursorJuegos.getString(2));
-                juego.setNombreJuego(cursorJuegos.getString(1));
-                juego.setComplejidad(cursorJuegos.getString(3));
-                juego.setPuntaje(cursorJuegos.getInt(5));
-                juego.setNivel(cursorJuegos.getString(4));
-
-                listaJugadores.add(juego);
-            } while(cursorJuegos.moveToNext() || listaJugadores.size() < 10);
+        if(cursorJuegos.getCount() != 0){
+            if(cursorJuegos.moveToFirst()){
+                do{
+                    juego = new Jogos();
+                    juego.setNombreJuego(cursorJuegos.getString(1));
+                    juego.setNombreJugador(cursorJuegos.getString(2));
+                    juego.setComplejidad(cursorJuegos.getString(3));
+                    juego.setNivel(cursorJuegos.getString(4));
+                    juego.setPuntaje(cursorJuegos.getInt(5));
+                    listaJugadores.add(juego);
+                }while(cursorJuegos.moveToNext() && listaJugadores.size() < 10);
+            }
         }
         cursorJuegos.close();
-
+        db.close();
+        dbHelper.close();
         return listaJugadores;
     }
 
